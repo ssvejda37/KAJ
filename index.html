@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Weekly Calendar</h1>
+    <div class="smiley-container">
+        <svg id="smiley" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+            <circle cx="32" cy="32" r="30" fill="#FFEB3B"/>
+            <circle cx="20.5" cy="24" r="4.5" fill="#000000"/>
+            <circle cx="43.5" cy="24" r="4.5" fill="#000000"/>
+            <path class="mouth" d="M20,40 Q32,35 44,40" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"/>
+        </svg>
+    </div>
+</header>
+<nav>
+    <button id="prevWeek">◀</button>
+    <button id="nextWeek">▶</button>
+    <button id="newEvent">New event</button>
+</nav>
+<div class="container">
+    <div class="hour-column">
+        <div class="hours-header">&nbsp;</div>
+        <div class="hour">06:00</div>
+        <div class="hour">07:00</div>
+        <div class="hour">08:00</div>
+        <div class="hour">09:00</div>
+        <div class="hour">10:00</div>
+        <div class="hour">11:00</div>
+        <div class="hour">12:00</div>
+        <div class="hour">13:00</div>
+        <div class="hour">14:00</div>
+        <div class="hour">15:00</div>
+        <div class="hour">16:00</div>
+        <div class="hour">17:00</div>
+        <div class="hour">18:00</div>
+        <div class="hour">19:00</div>
+        <div class="hour">20:00</div>
+        <div class="hour">21:00</div>
+    </div>
+    <div class="calendar" id="calendar">
+        <div class="day-column" id="dow1"></div>
+        <div class="day-column" id="dow2"></div>
+        <div class="day-column" id="dow3"></div>
+        <div class="day-column" id="dow4"></div>
+        <div class="day-column" id="dow5"></div>
+        <div class="day-column" id="dow6"></div>
+        <div class="day-column" id="dow0"></div>
+    </div>
+    <div id="trash" class="trash-bin">
+        <img src="trash.png" alt="Trash Bin">
+    </div>
+</div>
+<section id="eventForm">
+    <h2>Add Event</h2>
+    <form id="addEventForm">
+        <label for="eventTitle">Event Title:</label>
+        <input type="text" id="eventTitle" required placeholder="Title" autofocus>
+        <label for="eventDay">Date:</label>
+        <input type="date" id="eventDay" required>
+        <label for="eventStart">Start Time:</label>
+        <input type="time" id="eventStart" required>
+        <label for="eventEnd">End Time:</label>
+        <input type="time" id="eventEnd" required>
+        <label for="eventType">Type:</label>
+        <select id="eventType" required>
+            <option value="">--choose--</option>
+            <option value="Massage">Massage</option>
+            <option value="Physiotherapy">Physiotherapy</option>
+            <option value="Yoga">Yoga</option>
+        </select>
+        <button type="submit">Add Event</button>
+    </form>
+</section>
+<audio src="delete-sound.mp3" id="audio"></audio>
+<script src="script.js"></script>
+</body>
+</html>

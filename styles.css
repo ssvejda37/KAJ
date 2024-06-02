@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #6095dc;
+    color: white;
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+nav {
+    display: flex;
+    justify-content: right;
+    margin: 1em 0;
+}
+
+nav button {
+    margin: 0 1em;
+}
+
+.container {
+    display: flex;
+}
+
+.hour-column {
+    display: flex;
+    flex-direction: column;
+    top: 30px
+}
+
+.hour {
+    height: 59px; /* 1 hour = 60px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.hour-cal {
+    height: 59px; /* 1 hour = 60px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    margin: 0 1em 1em 1em;
+    position: relative;
+    height: 994px; /* 16 hours, 60px per hour - 3 random pixels */
+    width: 100%;
+}
+
+.day-column {
+    border: 1px solid #ddd;
+    position: relative;
+    overflow-y: auto;
+}
+
+.day-header, .day-header-current {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 0.5em;
+    position: sticky;
+    top: 0;
+    border: 1px solid #ddd;
+    height: 18px;
+}
+
+.day-header-current {
+    background-color: coral;
+}
+
+.hours-header {
+    background-color: white;
+    padding: 0.5em;
+    position: sticky;
+    top: 0;
+    height: 20px;
+}
+
+#eventForm {
+    position: absolute;
+    margin: 1em;
+    background-color: #f0f0f0;
+    border: 3px solid grey;
+    width: 300px;
+    top: 140px;
+    right: 0.2em;
+    padding: 5px;
+    display: none;
+}
+
+#eventForm form {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+}
+
+#eventForm form button {
+    margin-top: 10px;
+    background-color: #6095dc;
+}
+
+#eventForm form button:hover {
+    background-color: #86b5f8;
+}
+
+#eventForm form button:active {
+    background-color: #2f5e9d;
+}
+
+.event {
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: rgba(33, 141, 255, 0.7);
+    color: white;
+    font-size: 0.8em;
+    border: 1px solid #000050;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 3px;
+}
+
+.trash-bin {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    transition: transform 0.5s;
+}
+
+.trash-bin img {
+    width: 100%;
+    height: 100%;
+}
+
+.bin-open {
+    transform: scale(1.2);
+}
+
+.smiley-container {
+    width: 50px;
+    height: 50px;
+    margin: 5px auto;
+    padding: 5px;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    background-color: #000050;
+    border-radius: 5px;
+}
+.smiley-container .mouth {
+    transition: d 0.5s ease-in-out;
+}
